@@ -3,242 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Le Grand Bal Masqué — Carnevale, 6 août 2026</title>
-<meta name="description" content="Le Grand Bal masqué. Jeudi 6 août 2026, 20h00. Masque obligatoire. Sur invitation.">
+<title>Le Grand Bal — 6 août 2026</title>
+<meta name="description" content="Vous êtes convié au Grand Bal. Jeudi 6 août 2026, 20h00. Black tie exigé. Sur invitation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Cormorant+Garamond:ital,wght@0,300..600;1,300..500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --rouge:#8E1114;
-  --rouge-clair:#A61A1D;
-  --rouge-fonce:#5A0A0C;
-  --rouge-profond:#2C0507;
-  --noir:#160203;
-  --prune:#4A1330;
-  --or:#C9A227;
-  --or-clair:#EBD79E;
-  --ivoire:#F5EAD3;
-  --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif;
-  --display:"Bodoni Moda","Didot",Georgia,serif;
+  --cream:#F4EFE4;
+  --cream-2:#EDE5D4;
+  --cream-3:#E5DAC4;
+  --ink:#463E32;
+  --ink-soft:#6D6456;
+  --taupe:#8B8175;
+  --or:#A9812A;
+  --or-clair:#C6A356;
+  --or-hi:#E3CD8E;
+  --ligne:rgba(169,129,42,.34);
+  --ligne-forte:rgba(169,129,42,.6);
+  /* portrait / tableau */
+  --toile:#211B13;
+  --toile-2:#3B3021;
+  --cadre:#C6A356;
+  --serif:"Cormorant Garamond","EB Garamond",Garamond,"Times New Roman",serif;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  margin:0;background:var(--noir);color:var(--ivoire);
-  font-family:var(--serif);font-size:18px;line-height:1.62;
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--serif);font-size:19px;line-height:1.66;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 
 .wrap{width:min(1080px,92vw);margin:0 auto;}
-.etroit{width:min(720px,92vw);margin:0 auto;}
+.etroit{width:min(700px,92vw);margin:0 auto;}
 
-/* losanges d'arlequin, très discrets */
-.arlequin{
-  background-image:
-    repeating-linear-gradient(45deg, rgba(235,215,158,.035) 0 1px, transparent 1px 34px),
-    repeating-linear-gradient(-45deg, rgba(74,19,48,.28) 0 1px, transparent 1px 34px);
-}
-
-.eyebrow{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--or);text-indent:.4em;margin:0 0 18px;}
+.eyebrow{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--or);text-indent:.42em;margin:0 0 18px;}
 h2{
   font-family:var(--display);font-weight:500;text-transform:uppercase;
-  font-size:clamp(28px,4.4vw,44px);line-height:1.05;letter-spacing:.02em;
-  margin:0 0 28px;color:#FFF7E4;
+  font-size:clamp(27px,4.2vw,42px);line-height:1.05;letter-spacing:.015em;
+  margin:0 0 30px;color:var(--taupe);text-wrap:balance;
 }
-section{padding:clamp(70px,10vw,130px) 0;position:relative;}
+section{padding:clamp(64px,9vw,120px) 0;position:relative;}
 
 /* ---------------- NAV ---------------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
-  display:flex;justify-content:center;gap:clamp(14px,3vw,34px);padding:16px 20px;
-  background:linear-gradient(180deg, rgba(22,2,3,.92), rgba(22,2,3,0));
-  opacity:0;animation:paraitre .9s 2.6s forwards;
+  display:flex;justify-content:center;gap:clamp(14px,3vw,34px);padding:15px 20px;
+  background:linear-gradient(180deg, rgba(244,239,228,.96), rgba(244,239,228,0));
+  opacity:0;animation:paraitre .9s 2.4s forwards;
 }
 nav a{
-  color:var(--or-clair);text-decoration:none;font-size:10.5px;letter-spacing:.26em;
-  text-transform:uppercase;text-indent:.26em;padding:4px 0;
+  color:var(--or);text-decoration:none;font-size:10.5px;letter-spacing:.24em;
+  text-transform:uppercase;text-indent:.24em;padding:4px 0;
   border-bottom:1px solid transparent;transition:border-color .25s,color .25s;white-space:nowrap;
 }
-nav a:hover,nav a:focus-visible{border-color:var(--or);color:#FFF7E4;}
+nav a:hover,nav a:focus-visible{border-color:var(--or);color:var(--ink);}
 @media (max-width:640px){nav a:nth-child(n+5){display:none;}}
 
 /* ---------------- HERO ---------------- */
 .hero{
-  min-height:100svh;position:relative;overflow:hidden;text-align:center;
+  min-height:100svh;position:relative;text-align:center;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:100px 20px min(42vh,330px);
-  background:radial-gradient(115% 85% at 50% 30%, var(--rouge-clair) 0%, var(--rouge) 24%, var(--rouge-fonce) 58%, var(--rouge-profond) 84%, var(--noir) 100%);
+  padding:clamp(84px,12vh,120px) 20px clamp(56px,8vh,90px);
+  background:
+    radial-gradient(120% 80% at 50% 8%, #FBF7EE 0%, var(--cream) 46%, var(--cream-2) 100%);
 }
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 1px, transparent 1px 3px);
+/* cadre double filet doré, comme le carton imprimé */
+.hero::before{
+  content:"";position:absolute;inset:clamp(14px,2.4vw,30px);pointer-events:none;
+  border:1.5px solid var(--ligne-forte);
+  box-shadow:inset 0 0 0 4px var(--cream), inset 0 0 0 5px rgba(169,129,42,.32);
 }
 .hero > *{position:relative;z-index:3;}
 
-.sceau{width:clamp(104px,15vw,146px);height:auto;margin-bottom:24px;
-  opacity:0;animation:sceauEntre 1.1s 1.5s cubic-bezier(.2,.7,.3,1) forwards;}
-.sceau .trait{fill:none;stroke:var(--or);}
-.sceau text{fill:var(--or-clair);font-family:var(--serif);}
-.sceau .ring-txt{font-size:9px;letter-spacing:3.4px;text-transform:uppercase;}
-.masque{fill:var(--or-clair);}
-.plume{fill:none;stroke:var(--or);stroke-width:1.6;stroke-linecap:round;}
+.filet{display:block;width:64px;height:1px;background:var(--or-clair);margin:22px auto;opacity:.8;}
 
-h1{
-  font-family:var(--display);font-weight:500;text-transform:uppercase;
-  font-size:clamp(40px,9.4vw,104px);line-height:.9;letter-spacing:.01em;margin:0;color:#FFF7E4;
-  text-shadow:0 6px 34px rgba(44,5,7,.6);
-}
-h1 .l1,h1 .l2{display:block;opacity:0;animation:monte 1s cubic-bezier(.2,.7,.3,1) forwards;}
-h1 .l1{animation-delay:1.85s;} h1 .l2{animation-delay:2s;}
+.sceau{width:clamp(112px,15vw,150px);height:auto;margin-bottom:6px;
+  opacity:0;animation:sceauEntre 1.1s 1.3s cubic-bezier(.2,.7,.3,1) forwards;}
+.sceau .trait{fill:none;stroke:var(--or);}
+.sceau .ring-txt{fill:var(--or);font-family:var(--serif);font-size:8.4px;letter-spacing:2.9px;text-transform:uppercase;}
+.sceau .laurier{fill:none;stroke:var(--or-clair);stroke-width:1.5;stroke-linecap:round;}
+.sceau .initiale{fill:var(--or);font-family:var(--display);font-size:58px;font-weight:500;}
+
 .sur-titre{
-  display:block;font-size:clamp(10px,1.6vw,13px);letter-spacing:.44em;color:var(--or-clair);
-  margin-bottom:16px;text-indent:.44em;font-weight:400;font-family:var(--serif);
+  display:block;font-size:clamp(9.5px,1.5vw,12px);letter-spacing:.4em;color:var(--or);
+  margin-bottom:22px;text-indent:.4em;font-weight:400;
+  opacity:0;animation:monte 1s 1.5s cubic-bezier(.2,.7,.3,1) forwards;
+}
+.convie{
+  display:block;font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(13px,2.1vw,19px);letter-spacing:.26em;color:var(--taupe);
+  text-indent:.26em;margin-bottom:8px;
   opacity:0;animation:monte 1s 1.7s cubic-bezier(.2,.7,.3,1) forwards;
 }
+h1{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(46px,11vw,120px);line-height:.92;letter-spacing:.005em;margin:0;color:var(--taupe);
+}
+h1 .l1{display:block;opacity:0;animation:monte 1.1s 1.9s cubic-bezier(.2,.7,.3,1) forwards;}
 .hero .date{
-  margin:24px 0 0;font-size:clamp(12px,2vw,15px);letter-spacing:.3em;text-transform:uppercase;
-  color:var(--or-clair);text-indent:.3em;opacity:0;animation:monte 1s 2.2s cubic-bezier(.2,.7,.3,1) forwards;
+  margin:22px 0 0;font-size:clamp(11px,1.8vw,14px);letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ink-soft);text-indent:.32em;opacity:0;animation:monte 1s 2.1s cubic-bezier(.2,.7,.3,1) forwards;
 }
 
-.compte{display:flex;gap:clamp(16px,4vw,42px);margin:38px 0 0;opacity:0;animation:monte 1s 2.4s cubic-bezier(.2,.7,.3,1) forwards;}
-.compte div{min-width:58px;}
-.compte b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(26px,4.6vw,42px);
-  line-height:1;color:#FFF7E4;font-variant-numeric:tabular-nums;}
-.compte span{display:block;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-top:8px;text-indent:.24em;}
+.compte{display:flex;gap:clamp(16px,4vw,40px);margin:34px 0 0;justify-content:center;
+  opacity:0;animation:monte 1s 2.3s cubic-bezier(.2,.7,.3,1) forwards;}
+.compte div{min-width:56px;}
+.compte b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(26px,4.4vw,40px);
+  line-height:1;color:var(--taupe);font-variant-numeric:tabular-nums;}
+.compte span{display:block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-top:8px;text-indent:.24em;}
 
 .btn{
   display:inline-block;font-family:var(--serif);font-size:12px;letter-spacing:.24em;
-  text-transform:uppercase;text-indent:.24em;color:var(--or-clair);text-decoration:none;
-  border:1px solid rgba(201,162,39,.65);background:transparent;padding:14px 30px;cursor:pointer;
-  transition:background .25s,color .25s;
+  text-transform:uppercase;text-indent:.24em;color:var(--or);text-decoration:none;
+  border:1px solid var(--ligne-forte);background:transparent;padding:14px 32px;cursor:pointer;
+  transition:background .25s,color .25s,border-color .25s;
 }
-.hero .btn{margin-top:36px;opacity:0;animation:monte 1s 2.6s cubic-bezier(.2,.7,.3,1) forwards;}
-.btn:hover,.btn:focus-visible{background:rgba(201,162,39,.16);color:#FFF7E4;}
-.btn.plein{background:var(--or);color:#2C0507;border-color:var(--or);}
-.btn.plein:hover{background:var(--or-clair);color:#2C0507;}
-:focus-visible{outline:2px solid var(--or-clair);outline-offset:3px;}
+.hero .btn{margin-top:34px;opacity:0;animation:monte 1s 2.5s cubic-bezier(.2,.7,.3,1) forwards;}
+.btn:hover,.btn:focus-visible{background:rgba(169,129,42,.1);color:var(--ink);border-color:var(--or);}
+.btn.plein{background:var(--or);color:var(--cream);border-color:var(--or);}
+.btn.plein:hover{background:var(--or-clair);color:#2A2115;}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px;}
 
-/* ---------------- LES DANSEURS ---------------- */
-.scene{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;
-  height:min(40vh,320px);display:flex;align-items:flex-end;justify-content:center;pointer-events:none;
+/* ================= TABLEAU VIVANT — LES VALSEURS ================= */
+.tableau-sec{background:var(--cream-2);}
+.tableau-sec .eyebrow{text-align:center;}
+.tableau-sec h2{text-align:center;}
+.portrait{
+  width:min(620px,90vw);margin:0 auto;position:relative;
 }
-.scene svg{height:100%;width:auto;max-width:112vw;overflow:visible;}
-.scene::before{ /* halo au sol */
-  content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:min(760px,90vw);height:180px;
-  background:radial-gradient(60% 100% at 50% 100%, rgba(201,162,39,.16), transparent 70%);
+.cadre-or{
+  position:relative;padding:clamp(16px,3vw,26px);border-radius:2px;
+  background:
+    linear-gradient(135deg,#E8CE8B,#B78E38 26%,#8C6A22 50%,#CBAA5C 74%,#E8CE8B);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.4) inset,
+    0 -2px 0 rgba(0,0,0,.25) inset,
+    0 30px 60px -20px rgba(60,44,16,.55),
+    0 8px 22px -12px rgba(60,44,16,.4);
 }
-.sol{stroke:var(--or);stroke-width:1;opacity:.55;
-  transform-box:fill-box;transform-origin:50% 50%;
-  animation:solTrace 1.4s .2s cubic-bezier(.2,.7,.3,1) both;}
-.couple{fill:var(--or-clair);opacity:0;animation:entreeCouple 1.8s .55s cubic-bezier(.2,.7,.3,1) forwards;}
-.bras{stroke:var(--or-clair);fill:none;stroke-linecap:round;stroke-width:5;}
-.glisse{transform-box:fill-box;transform-origin:50% 100%;animation:glisse 11s 2.4s ease-in-out infinite;}
-.valse{transform-box:fill-box;transform-origin:50% 100%;animation:valse 4.6s 2.4s ease-in-out infinite;}
-.jupe{transform-box:fill-box;transform-origin:50% 4%;animation:jupe 4.6s 2.4s ease-in-out infinite;}
-.eventail{transform-box:fill-box;transform-origin:50% 100%;animation:eventail 4.6s 2.4s ease-in-out infinite;}
+/* liseré intérieur du cadre */
+.cadre-or::after{
+  content:"";position:absolute;inset:clamp(10px,2vw,18px);border:2px solid rgba(40,28,10,.35);
+  border-radius:1px;pointer-events:none;z-index:4;
+  box-shadow:0 0 0 2px rgba(240,222,170,.5);
+}
+.toile{
+  position:relative;aspect-ratio:5/4;overflow:hidden;border-radius:1px;
+  background:
+    radial-gradient(120% 90% at 50% 18%, #4A3B26 0%, var(--toile-2) 34%, var(--toile) 78%, #17120C 100%);
+  box-shadow:inset 0 0 60px 10px rgba(0,0,0,.55);
+}
+/* patine / vignette du vernis */
+.vignette{position:absolute;inset:0;pointer-events:none;z-index:5;
+  background:radial-gradient(78% 78% at 50% 42%, transparent 40%, rgba(15,11,6,.5) 100%);}
+.craquelure{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.5;
+  background-image:
+    repeating-linear-gradient(58deg, rgba(0,0,0,.05) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-42deg, rgba(255,240,200,.03) 0 1px, transparent 1px 31px);}
+.halo{position:absolute;left:50%;top:14%;width:62%;height:70%;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(50% 46% at 50% 42%, rgba(227,205,142,.32), transparent 72%);}
+/* parquet en perspective */
+.parquet{position:absolute;left:50%;bottom:0;width:150%;height:34%;
+  background:
+    repeating-linear-gradient(90deg, rgba(227,205,142,.14) 0 1px, transparent 1px 7%),
+    linear-gradient(180deg, transparent, rgba(227,205,142,.05));
+  -webkit-mask-image:linear-gradient(180deg, transparent, #000 55%);
+          mask-image:linear-gradient(180deg, transparent, #000 55%);
+  transform:translateX(-50%) perspective(220px) rotateX(58deg);transform-origin:bottom;opacity:.8;}
 
-@keyframes solTrace{from{transform:scaleX(0);opacity:0;}to{transform:scaleX(1);opacity:.55;}}
-@keyframes entreeCouple{from{opacity:0;transform:translateX(-70px) scale(.93);}to{opacity:1;transform:none;}}
-@keyframes valse{0%,100%{transform:rotate(-2.4deg) translateY(0);}50%{transform:rotate(2.4deg) translateY(-5px);}}
-@keyframes glisse{0%,100%{transform:translateX(-18px);}50%{transform:translateX(18px);}}
-@keyframes jupe{0%,100%{transform:rotate(3.2deg) skewX(-2.5deg);}50%{transform:rotate(-3.2deg) skewX(2.5deg);}}
-@keyframes eventail{0%,100%{transform:rotate(-7deg);}50%{transform:rotate(7deg);}}
+/* poussière d'or */
+.poussiere span{position:absolute;bottom:-6px;width:3px;height:3px;border-radius:50%;
+  background:radial-gradient(circle,var(--or-hi),rgba(227,205,142,0));
+  animation:flotter 9s linear infinite;opacity:0;}
+.poussiere span:nth-child(1){left:18%;animation-delay:0s;}
+.poussiere span:nth-child(2){left:34%;animation-delay:1.6s;transform:scale(.7);}
+.poussiere span:nth-child(3){left:52%;animation-delay:3.1s;}
+.poussiere span:nth-child(4){left:68%;animation-delay:4.4s;transform:scale(1.3);}
+.poussiere span:nth-child(5){left:80%;animation-delay:2.2s;transform:scale(.6);}
+.poussiere span:nth-child(6){left:44%;animation-delay:5.8s;transform:scale(.9);}
+@keyframes flotter{
+  0%{opacity:0;transform:translateY(0) scale(.8);}
+  12%{opacity:.9;}
+  80%{opacity:.6;}
+  100%{opacity:0;transform:translateY(-240px) translateX(16px) scale(1.1);}
+}
+
+/* couches d'animation du couple */
+.travel{position:absolute;left:0;right:0;bottom:9%;height:82%;
+  display:flex;align-items:flex-end;justify-content:center;
+  animation:travel 7.5s ease-in-out infinite;will-change:transform;}
+.sway{height:100%;display:flex;align-items:flex-end;transform-origin:50% 96%;
+  animation:sway 3.6s ease-in-out infinite;will-change:transform;}
+.couple{height:100%;width:auto;overflow:visible;display:block;}
+.ombre{position:absolute;bottom:6%;left:50%;width:44%;height:5%;transform:translateX(-50%);
+  background:radial-gradient(closest-side, rgba(0,0,0,.5), transparent);
+  filter:blur(2px);animation:ombre 3.6s ease-in-out infinite;}
+
+.couple .homme,.couple .femme{fill:var(--or-hi);}
+.couple .trait-c{stroke:var(--or-hi);fill:none;stroke-linecap:round;}
+.couple .bras{stroke:var(--or-hi);fill:none;stroke-linecap:round;stroke-width:4.4;}
+.pans{transform-box:fill-box;transform-origin:50% 8%;animation:pans 3.6s ease-in-out infinite;}
+.femme-piv{transform-box:fill-box;transform-origin:50% 98%;animation:pirouette 11s cubic-bezier(.5,0,.2,1) infinite;will-change:transform;}
+.jupe{transform-box:fill-box;transform-origin:50% 6%;animation:jupe 3.6s ease-in-out infinite;}
+.bras-h{transform-box:fill-box;transform-origin:90% 20%;animation:brasH 3.6s ease-in-out infinite;}
+.eventail-g{transform-box:fill-box;transform-origin:50% 100%;animation:eventail 3.6s ease-in-out infinite;}
+
+@keyframes travel{0%{transform:translateX(-15%);}50%{transform:translateX(15%);}100%{transform:translateX(-15%);}}
+@keyframes sway{0%,100%{transform:rotate(-12deg) translateY(0);}50%{transform:rotate(12deg) translateY(-6px);}}
+@keyframes ombre{0%,100%{transform:translateX(calc(-50% - 14px)) scaleX(.9);opacity:.5;}50%{transform:translateX(calc(-50% + 14px)) scaleX(1.15);opacity:.35;}}
+@keyframes pans{0%,100%{transform:rotate(9deg) skewX(-4deg);}50%{transform:rotate(-9deg) skewX(4deg);}}
+@keyframes jupe{0%,100%{transform:rotate(4deg) skewX(-3deg) scaleX(1.02);}50%{transform:rotate(-4deg) skewX(3deg) scaleX(.98);}}
+@keyframes brasH{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+@keyframes eventail{0%,100%{transform:rotate(-9deg);}50%{transform:rotate(9deg);}}
+/* la cavalière fait une pirouette complète, périodiquement */
+@keyframes pirouette{0%,66%{transform:rotate(0);}82%{transform:rotate(200deg);}100%{transform:rotate(360deg);}}
+
+.cartouche{text-align:center;font-style:italic;color:var(--ink-soft);font-size:15px;margin:20px 0 0;letter-spacing:.02em;}
+
 @keyframes monte{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 @keyframes paraitre{to{opacity:1;}}
 @keyframes sceauEntre{from{opacity:0;transform:scale(.86);}to{opacity:1;transform:none;}}
 
 @media (prefers-reduced-motion:reduce){
-  .sceau,.couple,.sol,nav,h1 .l1,h1 .l2,.sur-titre,.hero .date,.compte,.hero .btn{animation:none!important;opacity:1!important;transform:none!important;}
-  .glisse,.valse,.jupe,.eventail{animation:none!important;}
-}
-@media (max-width:620px){
-  .scene{height:min(30vh,220px);}
-  .hero{padding-bottom:min(32vh,230px);}
+  .sceau,nav,h1 .l1,.sur-titre,.convie,.hero .date,.compte,.hero .btn{animation:none!important;opacity:1!important;transform:none!important;}
+  .travel,.sway,.pans,.femme-piv,.jupe,.bras-h,.eventail-g,.ombre,.poussiere span{animation:none!important;}
 }
 
 /* ---------------- CARTON ---------------- */
-.carton{background:var(--rouge-profond);}
+.carton{background:var(--cream);}
 .lettre{
-  background:radial-gradient(130% 95% at 50% 6%, var(--rouge-clair) 0%, var(--rouge) 34%, var(--rouge-fonce) 82%);
-  padding:clamp(34px,5vw,58px);position:relative;box-shadow:0 30px 70px rgba(0,0,0,.55);
+  background:linear-gradient(180deg,#FBF7EE, #F3ECDD);
+  padding:clamp(34px,5vw,60px);position:relative;
+  box-shadow:0 26px 60px -30px rgba(80,58,20,.5);
 }
-.lettre::before{content:"";position:absolute;inset:14px;border:1.5px solid rgba(201,162,39,.75);pointer-events:none;}
-.lettre::after{content:"";position:absolute;inset:19px;border:.75px solid rgba(201,162,39,.4);pointer-events:none;}
+.lettre::before{content:"";position:absolute;inset:14px;border:1.5px solid var(--ligne-forte);pointer-events:none;}
+.lettre::after{content:"";position:absolute;inset:19px;border:.75px solid var(--ligne);pointer-events:none;}
 .lettre .inner{position:relative;z-index:2;}
-.lettre p{margin:0 0 15px;font-size:17.5px;}
-.lettre .salut{font-style:italic;text-align:center;font-size:19px;margin-bottom:22px;}
+.lettre p{margin:0 0 16px;font-size:18px;color:var(--ink);}
+.lettre .salut{font-style:italic;text-align:center;font-size:20px;margin-bottom:24px;color:var(--taupe);}
 .rumeur-bloc{
-  margin:26px clamp(0px,3vw,26px) !important;padding:18px 20px;
-  border-top:1px solid rgba(201,162,39,.4);border-bottom:1px solid rgba(201,162,39,.4);
-  font-style:italic;text-align:center;color:var(--or-clair);font-size:16.5px !important;
+  margin:26px clamp(0px,3vw,26px) !important;padding:18px 22px;
+  border-top:1px solid var(--ligne-forte);border-bottom:1px solid var(--ligne-forte);
+  font-style:italic;text-align:center;color:var(--ink-soft);font-size:17px !important;
 }
-.signature{text-align:right;margin-top:32px;}
-.signature .nom{font-family:var(--display);font-style:italic;font-size:34px;line-height:1;color:#FFF7E4;}
-.signature .role{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair);margin-top:8px;text-indent:.3em;}
+.signature{text-align:right;margin-top:34px;}
+.signature .nom{font-family:var(--display);font-style:italic;font-size:38px;line-height:1;color:var(--taupe);}
+.signature .role{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-top:10px;text-indent:.3em;}
 
 /* ---------------- PROGRAMME ---------------- */
-.programme{background:var(--noir);}
+.programme{background:var(--cream-2);}
 .horaire{display:grid;grid-template-columns:96px 1fr;gap:0 26px;padding:20px 0;
-  border-top:1px solid rgba(201,162,39,.28);align-items:baseline;}
-.horaire:last-of-type{border-bottom:1px solid rgba(201,162,39,.28);}
-.horaire time{font-family:var(--display);font-size:22px;color:var(--or-clair);font-variant-numeric:tabular-nums;}
-.horaire h3{margin:0 0 4px;font-size:20px;font-weight:600;color:#FFF7E4;}
-.horaire p{margin:0;font-size:16px;color:rgba(245,234,211,.78);}
+  border-top:1px solid var(--ligne);align-items:baseline;}
+.horaire:last-of-type{border-bottom:1px solid var(--ligne);}
+.horaire time{font-family:var(--display);font-size:23px;color:var(--taupe);font-variant-numeric:tabular-nums;}
+.horaire h3{margin:0 0 4px;font-size:21px;font-weight:600;color:var(--ink);}
+.horaire p{margin:0;font-size:16.5px;color:var(--ink-soft);}
 .horaire.pivot time,.horaire.pivot h3{color:var(--or);}
-@media (max-width:560px){.horaire{grid-template-columns:1fr;gap:6px;}.horaire time{font-size:19px;}}
+@media (max-width:560px){.horaire{grid-template-columns:1fr;gap:6px;}.horaire time{font-size:20px;}}
 
 /* ---------------- TENUE ---------------- */
-.tenue{background:var(--rouge-profond);}
-.colonnes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.tenue{background:var(--cream);}
+.colonnes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .col{border-top:2px solid var(--or);padding-top:20px;}
 .col h3{margin:0 0 14px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);font-weight:400;text-indent:.24em;}
 .col ul{margin:0;padding:0;list-style:none;}
-.col li{padding:7px 0;font-size:16.5px;border-bottom:1px solid rgba(201,162,39,.16);}
+.col li{padding:8px 0;font-size:17px;border-bottom:1px solid var(--ligne);color:var(--ink);}
 @media (max-width:760px){.colonnes{grid-template-columns:1fr;}}
 
 /* ---------------- RUMEURS ---------------- */
-.rumeurs{background:var(--noir);}
-.tableau{width:100%;border-collapse:collapse;font-size:16.5px;}
+.rumeurs{background:var(--cream-2);}
+.tableau{width:100%;border-collapse:collapse;font-size:17px;}
 .tableau th{text-align:left;font-weight:400;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--or);padding:0 0 12px;border-bottom:1px solid rgba(201,162,39,.45);text-indent:.24em;}
-.tableau td{padding:16px 0;border-bottom:1px solid rgba(201,162,39,.18);vertical-align:top;}
+  color:var(--or);padding:0 0 12px;border-bottom:1px solid var(--ligne-forte);text-indent:.24em;}
+.tableau td{padding:16px 0;border-bottom:1px solid var(--ligne);vertical-align:top;color:var(--ink);}
 .tableau td:last-child{text-align:right;white-space:nowrap;}
-.statut{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;text-indent:.18em;
+.statut{font-size:10px;letter-spacing:.16em;text-transform:uppercase;text-indent:.16em;
   padding:5px 12px;border:1px solid;display:inline-block;}
-.s-neutre{color:var(--or-clair);border-color:rgba(201,162,39,.55);}
-.s-actif{color:#2C0507;background:var(--or);border-color:var(--or);}
-.s-mort{color:rgba(245,234,211,.45);border-color:rgba(245,234,211,.22);text-decoration:line-through;}
+.s-neutre{color:var(--ink-soft);border-color:var(--ligne-forte);}
+.s-actif{color:var(--cream);background:var(--or);border-color:var(--or);}
+.s-mort{color:rgba(109,100,86,.55);border-color:var(--ligne);text-decoration:line-through;}
 @media (max-width:600px){.tableau th:nth-child(2),.tableau td:nth-child(2){display:none;}}
 
 /* ---------------- FAQ ---------------- */
-.faq{background:var(--rouge-profond);}
-details{border-bottom:1px solid rgba(201,162,39,.25);padding:18px 0;}
-summary{cursor:pointer;list-style:none;font-size:19px;color:#FFF7E4;display:flex;justify-content:space-between;gap:20px;align-items:center;}
+.faq{background:var(--cream);}
+details{border-bottom:1px solid var(--ligne);padding:18px 0;}
+summary{cursor:pointer;list-style:none;font-size:20px;color:var(--ink);display:flex;justify-content:space-between;gap:20px;align-items:center;}
 summary::-webkit-details-marker{display:none;}
 summary::after{content:"+";color:var(--or);font-size:22px;line-height:1;}
 details[open] summary::after{content:"–";}
-details p{margin:12px 0 0;font-size:16.5px;color:rgba(245,234,211,.8);max-width:62ch;}
+details p{margin:12px 0 0;font-size:17px;color:var(--ink-soft);max-width:62ch;}
 
 /* ---------------- RSVP ---------------- */
-.rsvp{background:radial-gradient(110% 90% at 50% 45%, var(--rouge) 0%, var(--rouge-fonce) 52%, var(--noir) 100%);text-align:center;}
-.champ{width:100%;font-family:var(--serif);font-size:17px;color:var(--ivoire);
-  background:rgba(0,0,0,.24);border:1px solid rgba(201,162,39,.45);padding:13px 16px;margin-bottom:12px;}
-.champ::placeholder{color:rgba(245,234,211,.45);}
+.rsvp{background:linear-gradient(180deg,var(--cream-2),var(--cream-3));text-align:center;}
+.champ{width:100%;font-family:var(--serif);font-size:18px;color:var(--ink);
+  background:rgba(255,255,255,.5);border:1px solid var(--ligne-forte);padding:13px 16px;margin-bottom:12px;}
+.champ::placeholder{color:rgba(109,100,86,.6);}
 .choix{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
-.choix button{flex:1;min-width:130px;font-family:var(--serif);font-size:11px;letter-spacing:.18em;
-  text-transform:uppercase;text-indent:.18em;padding:13px 10px;cursor:pointer;background:transparent;
-  color:var(--or-clair);border:1px solid rgba(201,162,39,.45);transition:background .2s;}
-.choix button[aria-pressed="true"]{background:var(--or);color:#2C0507;border-color:var(--or);}
-.message{margin-top:20px;min-height:26px;font-style:italic;color:var(--or-clair);font-size:16.5px;}
+.choix button{flex:1;min-width:130px;font-family:var(--serif);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;text-indent:.16em;padding:13px 10px;cursor:pointer;background:rgba(255,255,255,.4);
+  color:var(--or);border:1px solid var(--ligne-forte);transition:background .2s,color .2s;}
+.choix button[aria-pressed="true"]{background:var(--or);color:var(--cream);border-color:var(--or);}
+.message{margin-top:20px;min-height:26px;font-style:italic;color:var(--ink-soft);font-size:17px;}
 
-/* ---------------- FOOTER ---------------- */
-footer{background:var(--noir);padding:46px 20px;text-align:center;border-top:1px solid rgba(201,162,39,.22);
-  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(235,215,158,.55);text-indent:.16em;}
-footer p{margin:6px 0;}
+/* ---------------- FOOTER (fiche pratique) ---------------- */
+footer{background:var(--cream);padding:clamp(56px,8vw,90px) 20px 60px;border-top:1px solid var(--ligne);}
+.fiche{width:min(760px,92vw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;}
+.fiche h4{margin:0 0 4px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--or);font-weight:400;text-indent:.22em;}
+.fiche p{margin:0;font-size:16.5px;color:var(--ink-soft);}
+.ps{width:min(760px,92vw);margin:38px auto 0;text-align:center;font-style:italic;color:var(--taupe);font-size:16px;}
+.pied{text-align:center;margin-top:40px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);text-indent:.18em;}
+@media (max-width:560px){.fiche{grid-template-columns:1fr;}}
 
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1);}
 .reveal.vu{opacity:1;transform:none;}
@@ -248,44 +326,37 @@ footer p{margin:6px 0;}
 <body>
 
 <nav>
+  <a href="#tableau">Le tableau</a>
   <a href="#carton">Le carton</a>
   <a href="#programme">Programme</a>
-  <a href="#tenue">Masques</a>
+  <a href="#tenue">Tenue</a>
   <a href="#rumeurs">Rumeurs</a>
-  <a href="#faq">Questions</a>
   <a href="#rsvp">Répondre</a>
 </nav>
 
 <!-- ================= HERO ================= -->
-<header class="hero arlequin">
-
-  <svg class="sceau" viewBox="0 0 200 200" role="img" aria-label="Sceau du Grand Bal masqué">
+<header class="hero">
+  <svg class="sceau" viewBox="0 0 200 200" role="img" aria-label="Sceau du Grand Bal">
     <defs>
-      <path id="arcHaut" d="M 100,100 m -74,0 a 74,74 0 0 1 148,0" transform="rotate(180 100 100)"/>
-      <path id="arcBas" d="M 100,100 m -74,0 a 74,74 0 0 0 148,0"/>
+      <path id="arcHaut" d="M 100,100 m -72,0 a 72,72 0 0 1 144,0" transform="rotate(180 100 100)"/>
+      <path id="arcBas" d="M 100,100 m -72,0 a 72,72 0 0 0 144,0"/>
     </defs>
-    <circle class="trait" cx="100" cy="100" r="88" stroke-width="1.6"/>
-    <circle class="trait" cx="100" cy="100" r="83" stroke-width="0.7" opacity=".6"/>
-    <text class="ring-txt"><textPath href="#arcHaut" startOffset="50%" text-anchor="middle">Le Grand Bal Masqué</textPath></text>
-    <text class="ring-txt"><textPath href="#arcBas" startOffset="50%" text-anchor="middle">· Carnevale MMXXVI ·</textPath></text>
-    <!-- plumes -->
-    <path class="plume" d="M 82,66 C 72,50 70,40 74,32"/>
-    <path class="plume" d="M 100,62 C 98,44 99,34 103,26"/>
-    <path class="plume" d="M 118,66 C 128,50 130,40 126,32"/>
-    <!-- masque de Colombine -->
-    <path class="masque" fill-rule="evenodd" d="
-      M 56,96 C 56,80 74,72 100,72 C 126,72 144,80 144,96
-      C 144,113 130,128 115,128 C 107,128 104,121 100,121
-      C 96,121 93,128 85,128 C 70,128 56,113 56,96 Z
-      M 68,95 a 11,8 0 1,0 22,0 a 11,8 0 1,0 -22,0
-      M 110,95 a 11,8 0 1,0 22,0 a 11,8 0 1,0 -22,0"/>
-    <path class="trait" d="M 74,140 L 126,140" stroke-width="0.8" opacity=".6"/>
+    <circle class="trait" cx="100" cy="100" r="86" stroke-width="1.4"/>
+    <circle class="trait" cx="100" cy="100" r="81" stroke-width="0.6" opacity=".6"/>
+    <text class="ring-txt"><textPath href="#arcHaut" startOffset="50%" text-anchor="middle">Le Grand Bal</textPath></text>
+    <text class="ring-txt"><textPath href="#arcBas" startOffset="50%" text-anchor="middle">· Anno MMXXVI ·</textPath></text>
+    <!-- lauriers -->
+    <path class="laurier" d="M 70,118 C 62,108 60,96 64,86"/>
+    <path class="laurier" d="M 66,112 l -7,-3 M 63,104 l -7,-2 M 62,96 l -7,-1 M 63,89 l -6,0"/>
+    <path class="laurier" d="M 130,118 C 138,108 140,96 136,86"/>
+    <path class="laurier" d="M 134,112 l 7,-3 M 137,104 l 7,-2 M 138,96 l 7,-1 M 137,89 l 6,0"/>
+    <text class="initiale" x="100" y="118" text-anchor="middle">V</text>
   </svg>
 
+  <span class="sur-titre">Sur invitation — ne se transmet pas</span>
   <h1>
-    <span class="sur-titre">Sur invitation · Masque obligatoire</span>
-    <span class="l1">Le Grand Bal</span>
-    <span class="l2">Masqué</span>
+    <span class="convie">Vous êtes convié au</span>
+    <span class="l1">Grand Bal</span>
   </h1>
   <p class="date">Jeudi 6 août 2026 · 20 h 00</p>
 
@@ -297,69 +368,80 @@ footer p{margin:6px 0;}
   </div>
 
   <a class="btn" href="#rsvp">Confirmer ma présence</a>
-
-  <!-- ---- les deux danseurs ---- -->
-  <div class="scene" aria-hidden="true">
-    <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet">
-      <line class="sol" x1="10" y1="184" x2="290" y2="184"
-            stroke="url(#degradeSol)"/>
-      <defs>
-        <linearGradient id="degradeSol" x1="0" x2="1">
-          <stop offset="0" stop-color="#C9A227" stop-opacity="0"/>
-          <stop offset=".5" stop-color="#C9A227" stop-opacity="1"/>
-          <stop offset="1" stop-color="#C9A227" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-
-      <g class="couple">
-        <g class="glisse">
-        <g class="valse">
-
-          <!-- ===== LE CAVALIER ===== -->
-          <!-- pans de l'habit -->
-          <path d="M 84,110 L 68,164 L 79,160 L 92,114 Z" opacity=".92"/>
-          <!-- jambes -->
-          <path d="M 86,108 L 82,150 L 77,183 L 86,183 L 90,150 L 93,108 Z"/>
-          <path d="M 95,108 L 99,150 L 103,183 L 112,183 L 108,150 L 103,108 Z"/>
-          <!-- buste -->
-          <path d="M 96,54 C 86,55 82,62 82,70 L 86,110 L 106,110 L 110,70 C 110,62 106,55 96,54 Z"/>
-          <!-- tête + tricorne -->
-          <circle cx="96" cy="44" r="9.5"/>
-          <path d="M 78,38 C 86,26 106,26 114,38 C 106,34 86,34 78,38 Z"/>
-          <!-- bras : main jointe en haut, bras libre en contrepoint -->
-          <path class="bras" d="M 108,70 C 122,66 132,60 140,54"/>
-          <path class="bras" d="M 84,70 C 72,80 68,92 70,102"/>
-
-          <!-- ===== MAIN JOINTE ===== -->
-          <circle cx="146" cy="51" r="5"/>
-
-          <!-- ===== LA CAVALIÈRE ===== -->
-          <!-- robe -->
-          <g class="jupe">
-            <path d="M 178,104 C 160,126 146,156 140,184 L 236,184 C 230,152 214,124 196,104 Z"/>
-          </g>
-          <!-- buste -->
-          <path d="M 187,54 C 179,55 175,61 175,69 L 179,106 L 195,106 L 199,69 C 199,61 195,55 187,54 Z"/>
-          <!-- tête + chignon -->
-          <circle cx="187" cy="44" r="9"/>
-          <path d="M 196,34 a 6.5,6.5 0 1,0 0.1,0 Z"/>
-          <!-- bras vers la main jointe -->
-          <path class="bras" d="M 176,68 C 166,62 156,55 150,52"/>
-          <!-- bras levé avec le masque sur bâton -->
-          <path class="bras" d="M 198,68 C 210,60 218,48 222,38"/>
-          <g class="eventail">
-            <line x1="222" y1="40" x2="228" y2="24" stroke="#EBD79E" stroke-width="2.4" stroke-linecap="round"/>
-            <ellipse cx="230" cy="17" rx="11" ry="8" fill="none" stroke="#EBD79E" stroke-width="2.4"/>
-            <circle cx="226" cy="16" r="1.8"/>
-            <circle cx="234" cy="16" r="1.8"/>
-          </g>
-
-        </g>
-        </g>
-      </g>
-    </svg>
-  </div>
 </header>
+
+<!-- ================= TABLEAU VIVANT ================= -->
+<section id="tableau" class="tableau-sec">
+  <div class="wrap reveal">
+    <p class="eyebrow">Accroché dans le grand salon</p>
+    <h2>Les Valseurs</h2>
+    <div class="portrait">
+      <div class="cadre-or">
+        <div class="toile">
+          <div class="halo"></div>
+          <div class="parquet"></div>
+          <div class="poussiere" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+          <div class="ombre" aria-hidden="true"></div>
+          <div class="travel" aria-hidden="true">
+            <div class="sway">
+              <svg class="couple" viewBox="0 0 300 240" preserveAspectRatio="xMidYMax meet">
+
+                <!-- ===== LE CAVALIER ===== -->
+                <!-- pans de l'habit (queue-de-pie) -->
+                <g class="pans">
+                  <path class="homme" d="M 112,120 L 96,196 L 108,190 L 120,126 Z" opacity=".95"/>
+                  <path class="homme" d="M 120,120 L 122,196 L 132,190 L 128,126 Z" opacity=".95"/>
+                </g>
+                <!-- jambes -->
+                <path class="homme" d="M 114,116 L 110,168 L 105,210 L 114,210 L 118,168 L 121,116 Z"/>
+                <path class="homme" d="M 123,116 L 127,168 L 131,210 L 140,210 L 136,168 L 131,116 Z"/>
+                <!-- buste -->
+                <path class="homme" d="M 124,54 C 113,55 109,63 109,72 L 113,118 L 135,118 L 139,72 C 139,63 135,55 124,54 Z"/>
+                <!-- tête -->
+                <circle class="homme" cx="124" cy="44" r="9.5"/>
+                <!-- bras vers la partenaire (main jointe au centre) -->
+                <path class="bras" d="M 137,72 C 152,68 164,62 172,56"/>
+                <!-- bras libre en contrepoint -->
+                <g class="bras-h"><path class="bras" d="M 111,72 C 99,80 94,92 96,104"/></g>
+
+                <!-- ===== MAIN JOINTE ===== -->
+                <circle class="homme" cx="178" cy="53" r="5.2"/>
+
+                <!-- ===== LA CAVALIÈRE (pivote pour la pirouette) ===== -->
+                <g class="femme-piv">
+                  <!-- robe de bal -->
+                  <g class="jupe">
+                    <path class="femme" d="M 210,116 C 188,144 172,182 166,214 L 258,214 C 252,180 236,142 214,116 Z"/>
+                    <path class="femme" d="M 210,116 C 200,150 198,186 200,214 L 224,214 C 226,184 224,150 214,116 Z" opacity=".55"/>
+                  </g>
+                  <!-- buste -->
+                  <path class="femme" d="M 219,54 C 210,55 206,62 206,71 L 210,118 L 226,118 L 230,71 C 230,62 226,55 219,54 Z"/>
+                  <!-- tête + chignon -->
+                  <circle class="femme" cx="219" cy="44" r="9"/>
+                  <path class="femme" d="M 227,33 a 6,6 0 1,0 0.1,0 Z"/>
+                  <!-- bras vers la main jointe -->
+                  <path class="bras" d="M 208,70 C 197,64 188,58 182,54"/>
+                  <!-- bras levé, l'éventail -->
+                  <path class="bras" d="M 229,70 C 241,62 249,50 253,40"/>
+                  <g class="eventail-g">
+                    <line class="trait-c" x1="253" y1="42" x2="260" y2="24" stroke-width="2.2"/>
+                    <path class="trait-c" d="M 252,26 C 258,16 268,14 272,20 C 268,22 260,24 256,30 Z" stroke-width="1.6" fill="rgba(227,205,142,.35)"/>
+                  </g>
+                </g>
+
+              </svg>
+            </div>
+          </div>
+
+          <div class="craquelure"></div>
+          <div class="vignette"></div>
+        </div>
+      </div>
+      <p class="cartouche">« Les Valseurs » — huile sur toile, artiste anonyme. Ne les quittez pas des yeux.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ================= CARTON ================= -->
 <section id="carton" class="carton">
@@ -368,11 +450,11 @@ footer p{margin:6px 0;}
     <div class="lettre">
       <div class="inner">
         <p class="salut">Mesdames, Messieurs, chers amis,</p>
-        <p>C'est avec un enthousiasme difficilement dissimulable que j'ai l'honneur de vous annoncer la tenue du Grand Bal masqué, en un lieu qui, le temps d'une soirée, ambitionnera de rivaliser avec les plus fastueux palais de Venise.</p>
-        <p>Chacun est instamment prié d'abandonner, ne serait-ce que pour quelques heures, les préoccupations ordinaires — et son propre visage. Les élégances seront remarquées, les audaces saluées, les négligences impitoyablement jugées par un comité dont l'existence reste à démontrer.</p>
-        <p>La soirée promet des mets raffinés, des breuvages en abondance, un orchestre dont les musiciens seront, sauf imprévu diplomatique, bien vivants, ainsi que plusieurs surprises dont je ne puis dévoiler la teneur. Des éléphants ont été évoqués. Un feu d'artifice est envisagé.</p>
+        <p>C'est avec un enthousiasme difficilement dissimulable que j'ai l'honneur de vous annoncer la tenue du Grand Bal, en un lieu qui, le temps d'une soirée, ambitionnera de rivaliser avec les plus fastueux salons d'Europe.</p>
+        <p>Chacun est instamment prié d'abandonner, ne serait-ce que pour quelques heures, les préoccupations ordinaires, et de se présenter dans une tenue digne de l'événement. Les élégances seront remarquées, les audaces saluées, les négligences impitoyablement jugées par un comité dont l'existence reste à démontrer.</p>
+        <p>La soirée promet, dit-on, des mets raffinés, des breuvages en abondance, un orchestre dont les musiciens seront, sauf imprévu diplomatique, bien vivants, ainsi que plusieurs surprises dont je ne puis dévoiler la teneur. Des éléphants ont été évoqués. Un feu d'artifice est envisagé.</p>
         <p class="rumeur-bloc">Je ne puis en revanche garantir qu'une chose : votre absence constituerait une faute de goût dont les générations futures pourraient bien se souvenir.</p>
-        <p>Dans l'attente du plaisir de vous retrouver sur la piste de danse — sans savoir, peut-être, à qui je m'adresse — je vous prie d'agréer mes salutations les plus distinguées.</p>
+        <p>Dans l'attente du plaisir de vous retrouver sur la piste de danse, je vous adresse mes salutations les plus distinguées.</p>
         <div class="signature">
           <div class="nom">Victor</div>
           <span class="role">Maître de cérémonie</span>
@@ -389,13 +471,11 @@ footer p{margin:6px 0;}
     <h2>Programme</h2>
 
     <div class="horaire"><time>20 h 00</time>
-      <div><h3>Arrivée des masques</h3><p>Champagne à l'entrée. Les retardataires seront accueillis avec la même chaleur, mais moins de champagne.</p></div></div>
+      <div><h3>Arrivée des invités</h3><p>Champagne à l'entrée. Les retardataires seront accueillis avec la même chaleur, mais moins de champagne.</p></div></div>
     <div class="horaire"><time>21 h 00</time>
-      <div><h3>Dîner</h3><p>Menu tenu secret. Manger masqué relève de la responsabilité de chacun.</p></div></div>
-    <div class="horaire"><time>22 h 30</time>
+      <div><h3>Dîner</h3><p>Menu tenu secret. On saura se tenir à table.</p></div></div>
+    <div class="horaire pivot"><time>22 h 30</time>
       <div><h3>Ouverture du bal</h3><p>Orchestre au grand complet. La première danse revient de droit au maître de cérémonie.</p></div></div>
-    <div class="horaire pivot"><time>00 h 00</time>
-      <div><h3>La chute des masques</h3><p>Chacun découvre avec qui il a dansé. Certaines amitiés n'y survivront pas.</p></div></div>
     <div class="horaire"><time>00 h 30</time>
       <div><h3>Feu d'artifice</h3><p>Sous réserve d'autorisation, de météo favorable et de bonne volonté du voisinage.</p></div></div>
     <div class="horaire"><time>02 h 00</time>
@@ -406,40 +486,40 @@ footer p{margin:6px 0;}
 </section>
 
 <!-- ================= TENUE ================= -->
-<section id="tenue" class="tenue arlequin">
+<section id="tenue" class="tenue">
   <div class="wrap reveal">
     <p class="eyebrow">Article premier</p>
-    <h2>Du masque et de la tenue</h2>
+    <h2>De la tenue</h2>
+    <p style="margin:-14px 0 30px;color:var(--ink-soft);max-width:60ch;">Black tie exigé. Les demandes de dérogation seront déposées en trois exemplaires auprès du comité, dont l'existence reste à démontrer.</p>
     <div class="colonnes">
       <div class="col">
         <h3>Recommandé</h3>
         <ul>
-          <li>Bauta, Colombina, médecin de peste</li>
-          <li>Domino et cape longue</li>
+          <li>Smoking, nœud papillon noir</li>
           <li>Robe de bal, gants au-dessus du coude</li>
-          <li>Plumes en quantité déraisonnable</li>
+          <li>Velours, brocart, dorures</li>
+          <li>Une allure d'un autre siècle</li>
         </ul>
       </div>
       <div class="col">
         <h3>Toléré</h3>
         <ul>
-          <li>Loup noir sur costume sombre</li>
-          <li>Tricorne, si porté sans ironie</li>
-          <li>Velours, brocart, dorures</li>
+          <li>Costume sombre irréprochable</li>
           <li>Décorations non méritées</li>
+          <li>Un soupçon d'excentricité</li>
+          <li>Le noir, toujours le noir</li>
         </ul>
       </div>
       <div class="col">
         <h3>Impitoyablement jugé</h3>
         <ul>
-          <li>Masque de ski</li>
-          <li>Loup en plastique acheté en station-service</li>
           <li>Baskets blanches neuves</li>
+          <li>Cravate desserrée « décontractée »</li>
           <li>« J'arrive direct du bureau »</li>
+          <li>Le jean, sous toutes ses formes</li>
         </ul>
       </div>
     </div>
-    <p style="margin-top:26px;font-size:15px;color:rgba(245,234,211,.65);">Nul n'entre à visage découvert. Les demandes de dérogation seront déposées en trois exemplaires auprès du comité, dont l'existence reste à démontrer.</p>
   </div>
 </section>
 
@@ -452,11 +532,10 @@ footer p{margin:6px 0;}
       <thead><tr><th>Rumeur</th><th>Source</th><th>Statut</th></tr></thead>
       <tbody>
         <tr><td>Présence de Céline Dion</td><td>Négociations en cours</td><td><span class="statut s-actif">En discussion</span></td></tr>
-        <tr><td>Arrivée des invités en gondole</td><td>Un ami d'un ami</td><td><span class="statut s-neutre">Ni confirmée ni démentie</span></td></tr>
+        <tr><td>Apparition de la garde suisse</td><td>Canal diplomatique</td><td><span class="statut s-neutre">Ni confirmée ni démentie</span></td></tr>
         <tr><td>Lâcher de paons dans le jardin</td><td>Le jardinier</td><td><span class="statut s-neutre">Ni confirmée ni démentie</span></td></tr>
         <tr><td>Deux éléphants à l'entrée</td><td>Le maître de cérémonie lui-même</td><td><span class="statut s-neutre">Ni confirmée ni démentie</span></td></tr>
-        <tr><td>Détachement de la garde suisse</td><td>Canal diplomatique</td><td><span class="statut s-neutre">Ni confirmée ni démentie</span></td></tr>
-        <tr><td>Chute des masques à minuit</td><td>Programme officiel</td><td><span class="statut s-actif">Confirmé</span></td></tr>
+        <tr><td>Un duel à l'aube</td><td>Programme officiel</td><td><span class="statut s-actif">Confirmé</span></td></tr>
         <tr><td>Il s'agirait en réalité d'un mariage</td><td>Rumeur infondée</td><td><span class="statut s-mort">Démenti formel</span></td></tr>
       </tbody>
     </table>
@@ -470,12 +549,10 @@ footer p{margin:6px 0;}
     <h2>Questions posées trop souvent</h2>
     <details><summary>Où se déroule le bal ?</summary>
       <p>L'adresse sera communiquée aux personnes ayant confirmé leur présence. Cette lenteur est délibérée.</p></details>
-    <details><summary>Le masque est-il vraiment obligatoire ?</summary>
-      <p>Oui. Un stock de secours sera prévu à l'entrée, mais il sera laid, et cela se saura.</p></details>
     <details><summary>Puis-je venir accompagné ?</summary>
-      <p>Oui, sous réserve que l'accompagnant soit masqué, présentable, et capable de tenir une conversation après minuit.</p></details>
+      <p>Oui, sous réserve que l'accompagnant soit présentable et capable de tenir une conversation après minuit.</p></details>
     <details><summary>Le stationnement est-il assuré ?</summary>
-      <p>Non. Les gondoles et les chevaux sont acceptés dans la limite des places disponibles.</p></details>
+      <p>Non. Les chevaux sont acceptés dans la limite des places disponibles.</p></details>
     <details><summary>Et s'il pleut ?</summary>
       <p>En cas de pluie, la soirée est maintenue. En cas de tempête, elle sera mémorable.</p></details>
     <details><summary>Est-ce que c'est un mariage ?</summary>
@@ -488,7 +565,7 @@ footer p{margin:6px 0;}
   <div class="etroit reveal">
     <p class="eyebrow" style="text-align:center">Réponse attendue avant le 30 juillet</p>
     <h2 style="text-align:center">Confirmer ma présence</h2>
-    <p style="margin:-10px auto 30px;max-width:52ch;color:rgba(245,234,211,.8);">Passé ce délai, votre place sera attribuée à quelqu'un de plus fiable.</p>
+    <p style="margin:-16px auto 30px;max-width:52ch;color:var(--ink-soft);">Passé ce délai, votre place sera attribuée à quelqu'un de plus fiable.</p>
     <div style="text-align:left">
       <input class="champ" id="nom" type="text" placeholder="Nom et prénom" autocomplete="name">
       <div class="choix" role="group" aria-label="Votre réponse">
@@ -496,16 +573,23 @@ footer p{margin:6px 0;}
         <button type="button" data-rep="sera présent, accompagné" aria-pressed="false">Je viens accompagné</button>
         <button type="button" data-rep="décline" aria-pressed="false">Je décline</button>
       </div>
-      <input class="champ" id="masque" type="text" placeholder="Masque envisagé (facultatif)">
+      <input class="champ" id="tenue-champ" type="text" placeholder="Tenue envisagée (facultatif)">
       <button class="btn plein" id="envoyer" style="width:100%;margin-top:8px;">Transmettre ma réponse</button>
       <p class="message" id="message" role="status"></p>
     </div>
   </div>
 </section>
 
+<!-- ================= FOOTER — FICHE PRATIQUE ================= -->
 <footer>
-  <p>Le Grand Bal Masqué · Carnevale MMXXVI</p>
-  <p>Comité d'organisation dont l'existence reste à démontrer</p>
+  <div class="fiche">
+    <div><h4>Tenue</h4><p>Black tie exigé. Les demandes de dérogation seront déposées en trois exemplaires.</p></div>
+    <div><h4>Réponse</h4><p>Avant le 30 juillet. Passé ce délai, votre place sera attribuée à quelqu'un de plus fiable.</p></div>
+    <div><h4>Stationnement</h4><p>Non assuré. Chevaux acceptés dans la limite des places disponibles.</p></div>
+    <div><h4>Intempéries</h4><p>En cas de pluie, la soirée est maintenue. En cas de tempête, elle sera mémorable.</p></div>
+  </div>
+  <p class="ps">P.-S. — Non, ce n'est pas un mariage. Merci de cesser de poser la question.</p>
+  <p class="pied">Le Grand Bal · Anno MMXXVI · Comité d'organisation dont l'existence reste à démontrer</p>
 </footer>
 
 <script>
@@ -516,7 +600,7 @@ function tic(){
   const d = cible - Date.now();
   if(d <= 0){
     document.getElementById('compte').innerHTML =
-      '<p style="font-family:var(--display);font-size:28px;color:#FFF7E4;margin:0;">C\'est ce soir.</p>';
+      '<p style="font-family:var(--display);font-size:28px;color:var(--taupe);margin:0;">C\'est ce soir.</p>';
     clearInterval(boucle); return;
   }
   const sec = Math.floor(d/1000);
@@ -544,11 +628,11 @@ document.querySelectorAll('.choix button').forEach(b=>{
 });
 document.getElementById('envoyer').addEventListener('click',()=>{
   const nom = document.getElementById('nom').value.trim();
-  const masque = document.getElementById('masque').value.trim();
+  const tenue = document.getElementById('tenue-champ').value.trim();
   const msg = document.getElementById('message');
   if(!nom){ msg.textContent = "Le comité exige un nom."; return; }
   if(!reponse){ msg.textContent = "Choisissez une réponse. L'indécision n'est pas une position."; return; }
-  const texte = `Grand Bal masqué du 6 août — ${nom} ${reponse}.` + (masque ? ` Masque : ${masque}.` : '');
+  const texte = `Grand Bal du 6 août — ${nom} ${reponse}.` + (tenue ? ` Tenue : ${tenue}.` : '');
   const fin = reponse === 'décline'
     ? "Réponse copiée. Envoyez-la à Victor, et vivez avec ce choix."
     : "Réponse copiée. Envoyez-la à Victor, votre place est retenue.";
